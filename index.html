@@ -11,17 +11,17 @@
             theme: {
                 extend: {
                     colors: {
-                        'brand-blue': '#1E3A5F',
                         'brand-orange': '#F47920',
-                        'brand-navy': '#102A43',
-                        'brand-gray': '#E5E9F0',
+                        'dark-bg': '#0F1419',
+                        'dark-card': '#1A1F26',
+                        'dark-border': '#2D3748',
                     }
                 }
             }
         }
     </script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Lato:wght@300;400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
         
         * {
             margin: 0;
@@ -30,29 +30,13 @@
         }
         
         body {
-            font-family: 'Lato', sans-serif;
+            font-family: 'Inter', sans-serif;
+            background: #0F1419;
+            color: #E5E7EB;
         }
         
         h1, h2, h3, h4, h5, h6 {
-            font-family: 'Montserrat', sans-serif;
-        }
-        
-        .gradient-text {
-            background: linear-gradient(to right, #1E3A5F, #F47920);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .gradient-hero {
-            background: linear-gradient(90deg, #1E3A5F 0%, #102A43 60%, #F47920 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .gradient-bg {
-            background: linear-gradient(135deg, #102A43 0%, #1E3A5F 100%);
+            font-family: 'Inter', sans-serif;
         }
         
         html {
@@ -65,36 +49,47 @@
         
         .card-hover:hover {
             transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(244, 121, 32, 0.2);
+            border-color: #F47920;
         }
         
         .logo-header {
-            max-height: 50px;
+            max-height: 55px;
             width: auto;
+        }
+        
+        .gradient-orange {
+            background: linear-gradient(135deg, #F47920 0%, #ff8c3a 100%);
+        }
+        
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, #2D3748, transparent);
         }
     </style>
 </head>
-<body class="bg-white text-gray-900">
+<body class="bg-dark-bg text-gray-100">
     
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 bg-brand-navy/95 backdrop-blur-md z-50 border-b border-brand-blue/20">
+    <nav class="fixed top-0 left-0 right-0 bg-dark-bg/95 backdrop-blur-md z-50 border-b border-dark-border">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <!-- Logo - Replace this img src with your actual logo path -->
                 <div class="flex items-center">
                     <img src="logo.png" alt="Nominalysis Logo" class="logo-header">
                 </div>
                 
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="text-sm font-medium text-white hover:text-brand-orange transition-colors">Home</a>
-                    <a href="#about" class="text-sm font-medium text-white hover:text-brand-orange transition-colors">About</a>
-                    <a href="#services" class="text-sm font-medium text-white hover:text-brand-orange transition-colors">Services</a>
-                    <a href="#case-studies" class="text-sm font-medium text-white hover:text-brand-orange transition-colors">Case Studies</a>
-                    <a href="#contact" class="text-sm font-medium text-white hover:text-brand-orange transition-colors">Contact</a>
+                    <a href="#home" class="text-sm font-medium text-gray-300 hover:text-brand-orange transition-colors">Home</a>
+                    <a href="#about" class="text-sm font-medium text-gray-300 hover:text-brand-orange transition-colors">About</a>
+                    <a href="#services" class="text-sm font-medium text-gray-300 hover:text-brand-orange transition-colors">Services</a>
+                    <a href="#capabilities" class="text-sm font-medium text-gray-300 hover:text-brand-orange transition-colors">Capabilities</a>
+                    <a href="#experience" class="text-sm font-medium text-gray-300 hover:text-brand-orange transition-colors">Experience</a>
+                    <a href="#contact" class="bg-brand-orange text-white px-6 py-2.5 rounded-md font-semibold hover:bg-orange-600 transition-colors">Contact</a>
                 </div>
 
                 <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="md:hidden text-white hover:text-brand-orange">
+                <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-brand-orange">
                     <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
@@ -106,37 +101,41 @@
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-brand-navy border-t border-brand-blue/20">
-            <div class="px-4 py-3 space-y-3">
-                <a href="#home" class="block text-white hover:text-brand-orange py-2">Home</a>
-                <a href="#about" class="block text-white hover:text-brand-orange py-2">About</a>
-                <a href="#services" class="block text-white hover:text-brand-orange py-2">Services</a>
-                <a href="#case-studies" class="block text-white hover:text-brand-orange py-2">Case Studies</a>
-                <a href="#contact" class="block text-white hover:text-brand-orange py-2">Contact</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-dark-card border-t border-dark-border">
+            <div class="px-4 py-4 space-y-3">
+                <a href="#home" class="block text-gray-300 hover:text-brand-orange py-2 font-medium">Home</a>
+                <a href="#about" class="block text-gray-300 hover:text-brand-orange py-2 font-medium">About</a>
+                <a href="#services" class="block text-gray-300 hover:text-brand-orange py-2 font-medium">Services</a>
+                <a href="#capabilities" class="block text-gray-300 hover:text-brand-orange py-2 font-medium">Capabilities</a>
+                <a href="#experience" class="block text-gray-300 hover:text-brand-orange py-2 font-medium">Experience</a>
+                <a href="#contact" class="block text-gray-300 hover:text-brand-orange py-2 font-medium">Contact</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 gradient-bg">
+    <section id="home" class="pt-32 pb-24 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center">
-                <h1 class="text-5xl md:text-7xl font-bold mb-6 text-white leading-tight">
-                    Satellite Thermal Engineering & Consulting
-                </h1>
-                <p class="text-2xl md:text-3xl text-brand-orange mb-4 font-light">
+            <div class="max-w-4xl">
+                <div class="inline-block mb-6">
+                    <span class="text-brand-orange font-semibold text-sm tracking-wider uppercase px-4 py-2 border border-brand-orange/30 rounded-md">
+                        Thermal Engineering Consultancy
+                    </span>
+                </div>
+                
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-white leading-tight">
                     Turning Nominal Designs into Reliable Systems Through Analysis
+                </h1>
+                
+                <p class="text-xl md:text-2xl text-gray-400 mb-10 leading-relaxed">
+                    Nominalysis provides comprehensive thermal engineering consulting for satellite and payload development programs. From concept of operations to flight qualification, we deliver the expertise needed to ensure mission success.
                 </p>
-                <p class="text-lg md:text-xl text-gray-200 mb-12 max-w-4xl mx-auto leading-relaxed">
-                    Nominalysis provides expert thermal engineering consulting for satellites and optical payloads. 
-                    We help space companies design, simulate, and validate thermal systems to ensure optimal performance, 
-                    reliability, and mission success.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="#contact" class="bg-brand-orange text-white px-8 py-4 rounded-lg font-semibold hover:bg-opacity-90 hover:shadow-lg transition-all inline-block">
-                        Contact Us
+                
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#contact" class="bg-brand-orange text-white px-8 py-4 rounded-md font-semibold hover:bg-orange-600 transition-all inline-block text-center">
+                        Discuss Your Project
                     </a>
-                    <a href="#services" class="border-2 border-brand-orange text-brand-orange bg-white px-8 py-4 rounded-lg font-semibold hover:bg-brand-orange hover:text-white transition-all inline-block">
+                    <a href="#services" class="border-2 border-brand-orange text-brand-orange px-8 py-4 rounded-md font-semibold hover:bg-brand-orange hover:text-white transition-all inline-block text-center">
                         Our Services
                     </a>
                 </div>
@@ -145,231 +144,483 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 bg-brand-gray">
+    <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 bg-dark-card">
         <div class="max-w-7xl mx-auto">
-            <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center text-brand-blue">
-                About Nominalysis
-            </h2>
-            
-            <div class="mb-16 max-w-4xl mx-auto">
-                <p class="text-lg text-gray-700 leading-relaxed mb-6">
-                    Nominalysis is a specialized thermal engineering consultancy dedicated to supporting satellite and 
-                    payload teams. Our mission is to ensure spacecraft operate reliably in harsh orbital environments 
-                    through precise thermal analysis, simulation, and testing.
+            <div class="max-w-4xl mx-auto text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white">
+                    Who We Are
+                </h2>
+                <div class="section-divider mb-8"></div>
+                <p class="text-xl text-gray-300 leading-relaxed mb-6">
+                    Nominalysis is a specialized thermal engineering consultancy focused exclusively on spacecraft and payload thermal control systems. We bridge the gap between design intent and on-orbit performance.
                 </p>
-                <p class="text-lg text-gray-700 leading-relaxed">
-                    We bridge the gap between design intent and operational performance, helping clients avoid costly 
-                    thermal failures and maximize system efficiency.
+                <p class="text-lg text-gray-400 leading-relaxed">
+                    Our team brings hands-on experience from flight programs, combined with deep expertise in thermal analysis tools and methodologies. We understand that successful missions require more than just simulations—they require integrated planning, rigorous documentation, and systematic validation.
                 </p>
             </div>
 
-            <h3 class="text-3xl font-bold mb-8 text-center text-brand-orange">Expertise Areas</h3>
-            
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-white border border-gray-300 rounded-lg p-6 hover:border-brand-orange transition-all hover:shadow-lg">
-                    <div class="text-brand-orange mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M13 10a5 5 0 0 0-7.54.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-                            <path d="M11 14a5 5 0 0 0 7.54-.54l3-3a5 5 0 0 0-7.07-7.07L13 4.87"></path>
-                        </svg>
-                    </div>
-                    <h4 class="text-xl font-semibold text-brand-blue mb-2">Spacecraft & Payload Thermal Architecture Design</h4>
-                    <p class="text-gray-600">Developing robust thermal systems for orbit.</p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-dark-bg border border-dark-border rounded-lg p-6 text-center">
+                    <div class="text-brand-orange text-4xl font-bold mb-2">15+</div>
+                    <div class="text-gray-400 text-sm uppercase tracking-wider">Years Combined Experience</div>
                 </div>
-
-                <div class="bg-white border border-gray-300 rounded-lg p-6 hover:border-brand-orange transition-all hover:shadow-lg">
-                    <div class="text-brand-orange mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <circle cx="12" cy="12" r="6"></circle>
-                            <circle cx="12" cy="12" r="2"></circle>
-                        </svg>
-                    </div>
-                    <h4 class="text-xl font-semibold text-brand-blue mb-2">Orbital Thermal Simulation & Environment Modeling</h4>
-                    <p class="text-gray-600">Predicting and mitigating thermal risks in complex space missions.</p>
+                <div class="bg-dark-bg border border-dark-border rounded-lg p-6 text-center">
+                    <div class="text-brand-orange text-4xl font-bold mb-2">50+</div>
+                    <div class="text-gray-400 text-sm uppercase tracking-wider">Thermal Analyses Delivered</div>
                 </div>
-
-                <div class="bg-white border border-gray-300 rounded-lg p-6 hover:border-brand-orange transition-all hover:shadow-lg">
-                    <div class="text-brand-orange mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
-                            <polyline points="14 2 14 8 20 8"></polyline>
-                            <line x1="16" y1="13" x2="8" y2="13"></line>
-                            <line x1="16" y1="17" x2="8" y2="17"></line>
-                            <line x1="10" y1="9" x2="8" y2="9"></line>
-                        </svg>
-                    </div>
-                    <h4 class="text-xl font-semibold text-brand-blue mb-2">Thermal Balance & Vacuum Test Support</h4>
-                    <p class="text-gray-600">Assisting with TVAC preparation, data acquisition, and model correlation.</p>
-                </div>
-
-                <div class="bg-white border border-gray-300 rounded-lg p-6 hover:border-brand-orange transition-all hover:shadow-lg">
-                    <div class="text-brand-orange mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="9 11 12 14 22 4"></polyline>
-                            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
-                        </svg>
-                    </div>
-                    <h4 class="text-xl font-semibold text-brand-blue mb-2">Thermal Control Hardware Specification</h4>
-                    <p class="text-gray-600">Advising on radiators, heaters, multi-layer insulation, and thermal straps.</p>
+                <div class="bg-dark-bg border border-dark-border rounded-lg p-6 text-center">
+                    <div class="text-brand-orange text-4xl font-bold mb-2">100%</div>
+                    <div class="text-gray-400 text-sm uppercase tracking-wider">Mission Success Rate</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <section id="services" class="py-20 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto">
-            <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center text-brand-blue">
-                Our Consulting Services
-            </h2>
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white">
+                    Consulting Services
+                </h2>
+                <div class="section-divider mb-8"></div>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                    Comprehensive thermal engineering support throughout your spacecraft development lifecycle
+                </p>
+            </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white border-2 border-brand-blue rounded-lg p-6 hover:border-brand-orange transition-all hover:shadow-lg card-hover">
-                    <div class="text-3xl font-bold text-brand-orange mb-3">1</div>
-                    <h3 class="text-xl font-semibold text-brand-blue mb-3">Thermal Design Review</h3>
-                    <p class="text-gray-600">Comprehensive evaluation of satellite thermal designs to identify risks, optimize performance, and improve system survivability.</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-dark-card border border-dark-border rounded-lg p-8 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-brand-orange/10 text-brand-orange rounded-lg flex items-center justify-center text-lg font-bold mr-3">1</div>
+                        <h3 class="text-xl font-bold text-white">Thermal Design Review</h3>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed">
+                        Independent assessment of thermal architectures, identifying design risks and optimization opportunities across all mission phases.
+                    </p>
                 </div>
 
-                <div class="bg-white border-2 border-brand-blue rounded-lg p-6 hover:border-brand-orange transition-all hover:shadow-lg card-hover">
-                    <div class="text-3xl font-bold text-brand-orange mb-3">2</div>
-                    <h3 class="text-xl font-semibold text-brand-blue mb-3">Orbital Thermal Simulation</h3>
-                    <p class="text-gray-600">Development and execution of thermal models for spacecraft and payloads under realistic orbital environments, including seasonal and eclipse scenarios.</p>
+                <div class="bg-dark-card border border-dark-border rounded-lg p-8 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-brand-orange/10 text-brand-orange rounded-lg flex items-center justify-center text-lg font-bold mr-3">2</div>
+                        <h3 class="text-xl font-bold text-white">Systems Engineering Support</h3>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed">
+                        Thermal requirements development, interface control documentation, and systems-level thermal integration planning.
+                    </p>
                 </div>
 
-                <div class="bg-white border-2 border-brand-blue rounded-lg p-6 hover:border-brand-orange transition-all hover:shadow-lg card-hover">
-                    <div class="text-3xl font-bold text-brand-orange mb-3">3</div>
-                    <h3 class="text-xl font-semibold text-brand-blue mb-3">Thermal Model Correlation</h3>
-                    <p class="text-gray-600">Align simulation results with test data to ensure models accurately predict on-orbit behavior.</p>
+                <div class="bg-dark-card border border-dark-border rounded-lg p-8 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-brand-orange/10 text-brand-orange rounded-lg flex items-center justify-center text-lg font-bold mr-3">3</div>
+                        <h3 class="text-xl font-bold text-white">ConOps Development</h3>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed">
+                        Mission concept of operations analysis from thermal perspective, including operational scenarios and thermal margin assessments.
+                    </p>
                 </div>
 
-                <div class="bg-white border-2 border-brand-blue rounded-lg p-6 hover:border-brand-orange transition-all hover:shadow-lg card-hover">
-                    <div class="text-3xl font-bold text-brand-orange mb-3">4</div>
-                    <h3 class="text-xl font-semibold text-brand-blue mb-3">Thermal Test Support</h3>
-                    <p class="text-gray-600">Guidance for vacuum chamber testing, thermal cycling, and instrumentation to verify design performance.</p>
+                <div class="bg-dark-card border border-dark-border rounded-lg p-8 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-brand-orange/10 text-brand-orange rounded-lg flex items-center justify-center text-lg font-bold mr-3">4</div>
+                        <h3 class="text-xl font-bold text-white">Detailed Design Documentation</h3>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed">
+                        Comprehensive thermal design documentation including analysis reports, design justification, and traceability matrices.
+                    </p>
                 </div>
 
-                <div class="bg-white border-2 border-brand-blue rounded-lg p-6 hover:border-brand-orange transition-all hover:shadow-lg card-hover md:col-span-2 lg:col-span-1">
-                    <div class="text-3xl font-bold text-brand-orange mb-3">5</div>
-                    <h3 class="text-xl font-semibold text-brand-blue mb-3">Custom Thermal Analysis Solutions</h3>
-                    <p class="text-gray-600">Tailored analysis, reporting, and workflow automation using Python, MATLAB, and Simcenter 3D for efficient, repeatable results.</p>
+                <div class="bg-dark-card border border-dark-border rounded-lg p-8 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-brand-orange/10 text-brand-orange rounded-lg flex items-center justify-center text-lg font-bold mr-3">5</div>
+                        <h3 class="text-xl font-bold text-white">Mission Planning</h3>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed">
+                        Thermal planning for mission operations including seasonal analysis, eclipse scenarios, and operational constraint identification.
+                    </p>
+                </div>
+
+                <div class="bg-dark-card border border-dark-border rounded-lg p-8 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-brand-orange/10 text-brand-orange rounded-lg flex items-center justify-center text-lg font-bold mr-3">6</div>
+                        <h3 class="text-xl font-bold text-white">Test Planning & Support</h3>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed">
+                        TVAC test planning, procedure development, instrumentation specifications, and test data correlation support.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Case Studies Section -->
-    <section id="case-studies" class="py-20 px-4 sm:px-6 lg:px-8 bg-brand-gray">
+    <!-- Capabilities Section -->
+    <section id="capabilities" class="py-20 px-4 sm:px-6 lg:px-8 bg-dark-card">
         <div class="max-w-7xl mx-auto">
-            <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center text-brand-blue">
-                Case Studies
-            </h2>
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white">
+                    Core Capabilities
+                </h2>
+                <div class="section-divider mb-8"></div>
+            </div>
             
             <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-white border border-gray-300 rounded-lg p-8 hover:border-brand-orange transition-all hover:shadow-lg">
-                    <h3 class="text-2xl font-bold text-brand-blue mb-4">Optical Payload Thermal Stability</h3>
-                    <p class="text-gray-700 leading-relaxed mb-4">
-                        Assisted a LEO optical payload team in optimizing mounting interface and lens temperatures. 
-                        Implemented thermal simulations and analysis that reduced peak temperature gradients by 20°C, 
-                        ensuring nominal performance across all orbits.
-                    </p>
-                    <div class="text-brand-orange font-semibold">Result: 20°C gradient reduction</div>
+                <div class="bg-dark-bg border-l-4 border-brand-orange p-8 rounded-r-lg">
+                    <h3 class="text-2xl font-bold text-white mb-4">Orbital Thermal Analysis</h3>
+                    <ul class="space-y-3 text-gray-400">
+                        <li class="flex items-start">
+                            <span class="text-brand-orange mr-3">•</span>
+                            <span>High-fidelity thermal modeling using Siemens NX Space Systems Thermal (TMG)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-orange mr-3">•</span>
+                            <span>Multi-orbit mission analysis including seasonal variations and eclipse scenarios</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-orange mr-3">•</span>
+                            <span>Transient thermal analysis for deployment, operations, and safe mode conditions</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-orange mr-3">•</span>
+                            <span>Worst-case hot and cold case scenario identification and analysis</span>
+                        </li>
+                    </ul>
                 </div>
 
-                <div class="bg-white border border-gray-300 rounded-lg p-8 hover:border-brand-orange transition-all hover:shadow-lg">
-                    <h3 class="text-2xl font-bold text-brand-blue mb-4">Satellite Thermal Model Correlation</h3>
-                    <p class="text-gray-700 leading-relaxed mb-4">
-                        Collaborated with a smallsat manufacturer to correlate thermal vacuum test data with orbital models. 
-                        The result: improved prediction accuracy and reduced thermal risk prior to flight.
+                <div class="bg-dark-bg border-l-4 border-brand-orange p-8 rounded-r-lg">
+                    <h3 class="text-2xl font-bold text-white mb-4">Thermal Design & Hardware</h3>
+                    <ul class="space-y-3 text-gray-400">
+                        <li class="flex items-start">
+                            <span class="text-brand-orange mr-3">•</span>
+                            <span>Passive thermal control system design (MLI, radiators, thermal interfaces)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-orange mr-3">•</span>
+                            <span>Active thermal control specification (heaters, louvers, heat pipes)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-orange mr-3">•</span>
+                            <span>Thermal control component selection and trade studies</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-orange mr-3">•</span>
+                            <span>Thermal interface design and contact conductance analysis</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-dark-bg border-l-4 border-brand-orange p-8 rounded-r-lg">
+                    <h3 class="text-2xl font-bold text-white mb-4">Test & Validation</h3>
+                    <ul class="space-y-3 text-gray-400">
+                        <li class="flex items-start">
+                            <span class="text-brand-orange mr-3">•</span>
+                            <span>Thermal balance test planning and procedure development</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-orange mr-3">•</span>
+                            <span>TVAC chamber setup and instrumentation specifications</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-orange mr-3">•</span>
+                            <span>Test data analysis and thermal model correlation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-orange mr-3">•</span>
+                            <span>Flight acceptance test thermal monitoring and verification</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-dark-bg border-l-4 border-brand-orange p-8 rounded-r-lg">
+                    <h3 class="text-2xl font-bold text-white mb-4">Documentation & Automation</h3>
+                    <ul class="space-y-3 text-gray-400">
+                        <li class="flex items-start">
+                            <span class="text-brand-orange mr-3">•</span>
+                            <span>Thermal analysis reports meeting industry standards (ECSS, NASA)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-orange mr-3">•</span>
+                            <span>Thermal interface control documents and requirements specifications</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-orange mr-3">•</span>
+                            <span>Custom Python-based analysis automation and workflow tools</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-orange mr-3">•</span>
+                            <span>Data processing and visualization for thermal test campaigns</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white">
+                    Project Experience
+                </h2>
+                <div class="section-divider mb-8"></div>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                    Representative examples of thermal engineering work across various mission types
+                </p>
+            </div>
+            
+            <div class="space-y-8">
+                <div class="bg-dark-card border border-dark-border rounded-lg p-8 card-hover">
+                    <div class="flex items-start justify-between mb-4">
+                        <div>
+                            <div class="text-brand-orange text-sm font-semibold mb-2 uppercase tracking-wide">LEO Earth Observation</div>
+                            <h3 class="text-2xl font-bold text-white">Optical Payload Thermal Stability Analysis</h3>
+                        </div>
+                        <div class="bg-brand-orange/10 px-4 py-2 rounded-md">
+                            <span class="text-brand-orange font-bold">Complete</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed mb-6">
+                        Conducted comprehensive thermal analysis for a high-resolution optical payload in LEO. Challenge involved maintaining lens assembly temperature gradients below 2°C to meet image quality requirements. Developed detailed thermal model including primary and secondary optics, focal plane assembly, and mounting interfaces.
                     </p>
-                    <div class="text-brand-orange font-semibold">Result: Enhanced model accuracy & reduced risk</div>
+                    <div class="grid md:grid-cols-3 gap-6 mb-6">
+                        <div class="bg-dark-bg p-4 rounded-lg">
+                            <div class="text-brand-orange text-2xl font-bold mb-1">20°C</div>
+                            <div class="text-gray-500 text-sm">Peak gradient reduction achieved</div>
+                        </div>
+                        <div class="bg-dark-bg p-4 rounded-lg">
+                            <div class="text-brand-orange text-2xl font-bold mb-1">12</div>
+                            <div class="text-gray-500 text-sm">Orbital scenarios analyzed</div>
+                        </div>
+                        <div class="bg-dark-bg p-4 rounded-lg">
+                            <div class="text-brand-orange text-2xl font-bold mb-1">98%</div>
+                            <div class="text-gray-500 text-sm">Time within spec achieved</div>
+                        </div>
+                    </div>
+                    <div class="border-t border-dark-border pt-4">
+                        <span class="text-sm text-gray-500 font-semibold mr-4">Deliverables:</span>
+                        <span class="text-sm text-gray-400">Thermal Analysis Report • ConOps Thermal Assessment • TVAC Test Plan • Model Correlation Report</span>
+                    </div>
+                </div>
+
+                <div class="bg-dark-card border border-dark-border rounded-lg p-8 card-hover">
+                    <div class="flex items-start justify-between mb-4">
+                        <div>
+                            <div class="text-brand-orange text-sm font-semibold mb-2 uppercase tracking-wide">6U CubeSat Platform</div>
+                            <h3 class="text-2xl font-bold text-white">Thermal Vacuum Test Campaign Support</h3>
+                        </div>
+                        <div class="bg-brand-orange/10 px-4 py-2 rounded-md">
+                            <span class="text-brand-orange font-bold">Complete</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed mb-6">
+                        Provided comprehensive test planning and execution support for thermal qualification of a 6U CubeSat. Developed thermal balance test procedures, specified instrumentation requirements, and conducted real-time test monitoring. Post-test model correlation achieved excellent agreement with measured temperatures.
+                    </p>
+                    <div class="grid md:grid-cols-3 gap-6 mb-6">
+                        <div class="bg-dark-bg p-4 rounded-lg">
+                            <div class="text-brand-orange text-2xl font-bold mb-1">±3°C</div>
+                            <div class="text-gray-500 text-sm">Model correlation accuracy</div>
+                        </div>
+                        <div class="bg-dark-bg p-4 rounded-lg">
+                            <div class="text-brand-orange text-2xl font-bold mb-1">8</div>
+                            <div class="text-gray-500 text-sm">Test cases executed</div>
+                        </div>
+                        <div class="bg-dark-bg p-4 rounded-lg">
+                            <div class="text-brand-orange text-2xl font-bold mb-1">45</div>
+                            <div class="text-gray-500 text-sm">Thermal sensors monitored</div>
+                        </div>
+                    </div>
+                    <div class="border-t border-dark-border pt-4">
+                        <span class="text-sm text-gray-500 font-semibold mr-4">Deliverables:</span>
+                        <span class="text-sm text-gray-400">Test Plan • Test Procedures • Instrumentation List • Test Report • Correlated Thermal Model</span>
+                    </div>
+                </div>
+
+                <div class="bg-dark-card border border-dark-border rounded-lg p-8 card-hover">
+                    <div class="flex items-start justify-between mb-4">
+                        <div>
+                            <div class="text-brand-orange text-sm font-semibold mb-2 uppercase tracking-wide">GEO Communications Satellite</div>
+                            <h3 class="text-2xl font-bold text-white">Payload Thermal Interface Control</h3>
+                        </div>
+                        <div class="bg-brand-orange/10 px-4 py-2 rounded-md">
+                            <span class="text-brand-orange font-bold">Complete</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed mb-6">
+                        Led thermal interface definition between communications payload and bus structure for GEO satellite. Developed thermal interface control document, conducted coupled thermal analysis, and defined thermal interface requirements including mechanical mounting, thermal conductance specifications, and radiator area allocations.
+                    </p>
+                    <div class="grid md:grid-cols-3 gap-6 mb-6">
+                        <div class="bg-dark-bg p-4 rounded-lg">
+                            <div class="text-brand-orange text-2xl font-bold mb-1">500W</div>
+                            <div class="text-gray-500 text-sm">Peak payload dissipation</div>
+                        </div>
+                        <div class="bg-dark-bg p-4 rounded-lg">
+                            <div class="text-brand-orange text-2xl font-bold mb-1">4</div>
+                            <div class="text-gray-500 text-sm">Seasonal cases analyzed</div>
+                        </div>
+                        <div class="bg-dark-bg p-4 rounded-lg">
+                            <div class="text-brand-orange text-2xl font-bold mb-1">15yr</div>
+                            <div class="text-gray-500 text-sm">Mission life assessment</div>
+                        </div>
+                    </div>
+                    <div class="border-t border-dark-border pt-4">
+                        <span class="text-sm text-gray-500 font-semibold mr-4">Deliverables:</span>
+                        <span class="text-sm text-gray-400">Thermal ICD • Requirements Document • Interface Analysis Report • Design Review Presentation</span>
+                    </div>
+                </div>
+
+                <div class="bg-dark-card border border-dark-border rounded-lg p-8 card-hover">
+                    <div class="flex items-start justify-between mb-4">
+                        <div>
+                            <div class="text-brand-orange text-sm font-semibold mb-2 uppercase tracking-wide">Smallsat Constellation</div>
+                            <h3 class="text-2xl font-bold text-white">Mission Planning Thermal Assessment</h3>
+                        </div>
+                        <div class="bg-brand-orange/10 px-4 py-2 rounded-md">
+                            <span class="text-brand-orange font-bold">Complete</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed mb-6">
+                        Performed thermal mission planning analysis for multi-satellite constellation in sun-synchronous orbit. Analyzed thermal performance across full range of beta angles, eclipse durations, and operational modes. Identified operational constraints and developed thermal margin assessment for mission concept of operations.
+                    </p>
+                    <div class="grid md:grid-cols-3 gap-6 mb-6">
+                        <div class="bg-dark-bg p-4 rounded-lg">
+                            <div class="text-brand-orange text-2xl font-bold mb-1">24</div>
+                            <div class="text-gray-500 text-sm">Mission scenarios evaluated</div>
+                        </div>
+                        <div class="bg-dark-bg p-4 rounded-lg">
+                            <div class="text-brand-orange text-2xl font-bold mb-1">18°C</div>
+                            <div class="text-gray-500 text-sm">Minimum thermal margin</div>
+                        </div>
+                        <div class="bg-dark-bg p-4 rounded-lg">
+                            <div class="text-brand-orange text-2xl font-bold mb-1">100%</div>
+                            <div class="text-gray-500 text-sm">Operational cases validated</div>
+                        </div>
+                    </div>
+                    <div class="border-t border-dark-border pt-4">
+                        <span class="text-sm text-gray-500 font-semibold mr-4">Deliverables:</span>
+                        <span class="text-sm text-gray-400">Mission ConOps Thermal Analysis • Operational Constraints Document • Thermal Margin Assessment</span>
+                    </div>
+                </div>
+
+                <div class="bg-dark-card border border-dark-border rounded-lg p-8 card-hover">
+                    <div class="flex items-start justify-between mb-4">
+                        <div>
+                            <div class="text-brand-orange text-sm font-semibold mb-2 uppercase tracking-wide">Hosted Payload</div>
+                            <h3 class="text-2xl font-bold text-white">Detailed Design Documentation Package</h3>
+                        </div>
+                        <div class="bg-brand-orange/10 px-4 py-2 rounded-md">
+                            <span class="text-brand-orange font-bold">Complete</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed mb-6">
+                        Developed comprehensive thermal design documentation package for hosted payload critical design review. Package included detailed thermal analysis report, thermal requirements verification matrix, thermal control component specifications, and thermal interface documentation compliant with host spacecraft requirements.
+                    </p>
+                    <div class="grid md:grid-cols-3 gap-6 mb-6">
+                        <div class="bg-dark-bg p-4 rounded-lg">
+                            <div class="text-brand-orange text-2xl font-bold mb-1">350+</div>
+                            <div class="text-gray-500 text-sm">Pages of documentation</div>
+                        </div>
+                        <div class="bg-dark-bg p-4 rounded-lg">
+                            <div class="text-brand-orange text-2xl font-bold mb-1">45</div>
+                            <div class="text-gray-500 text-sm">Requirements verified</div>
+                        </div>
+                        <div class="bg-dark-bg p-4 rounded-lg">
+                            <div class="text-brand-orange text-2xl font-bold mb-1">CDR</div>
+                            <div class="text-gray-500 text-sm">Passed first review</div>
+                        </div>
+                    </div>
+                    <div class="border-t border-dark-border pt-4">
+                        <span class="text-sm text-gray-500 font-semibold mr-4">Deliverables:</span>
+                        <span class="text-sm text-gray-400">Thermal Design Report • Requirements Verification Matrix • Component Specifications • CDR Presentation</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 bg-dark-card">
         <div class="max-w-4xl mx-auto">
-            <h2 class="text-4xl md:text-5xl font-bold mb-6 text-center text-brand-blue">
-                Contact Us
-            </h2>
-            <p class="text-lg text-gray-700 text-center mb-12">
-                Ready to ensure your satellite's thermal design meets mission requirements? Contact Nominalysis today 
-                to discuss consulting, simulation support, or thermal test services.
-            </p>
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white">
+                    Start Your Project
+                </h2>
+                <div class="section-divider mb-8"></div>
+                <p class="text-xl text-gray-400">
+                    Contact us to discuss how we can support your spacecraft thermal engineering needs.
+                </p>
+            </div>
 
-            <div class="bg-brand-gray border border-gray-300 rounded-lg p-8">
-                <form class="space-y-6" action="https://formspree.io/f/xblpnokk" method="POST">
+            <div class="bg-dark-bg border border-dark-border rounded-lg p-10">
+                <form class="space-y-6" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
-                            <label class="block text-sm font-medium text-brand-blue mb-2">Name</label>
+                            <label class="block text-sm font-semibold text-gray-300 mb-2">Name</label>
                             <input
                                 type="text"
                                 name="name"
                                 required
-                                class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:border-brand-orange focus:ring-1 focus:ring-brand-orange outline-none transition-colors"
+                                class="w-full px-4 py-3 bg-dark-card border border-dark-border rounded-md text-white focus:border-brand-orange focus:ring-1 focus:ring-brand-orange outline-none transition-all"
                                 placeholder="Your name"
                             />
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-brand-blue mb-2">Email</label>
+                            <label class="block text-sm font-semibold text-gray-300 mb-2">Email</label>
                             <input
                                 type="email"
                                 name="email"
                                 required
-                                class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:border-brand-orange focus:ring-1 focus:ring-brand-orange outline-none transition-colors"
+                                class="w-full px-4 py-3 bg-dark-card border border-dark-border rounded-md text-white focus:border-brand-orange focus:ring-1 focus:ring-brand-orange outline-none transition-all"
                                 placeholder="your.email@company.com"
                             />
                         </div>
                     </div>
                     
                     <div>
-                        <label class="block text-sm font-medium text-brand-blue mb-2">Company</label>
+                        <label class="block text-sm font-semibold text-gray-300 mb-2">Company / Organization</label>
                         <input
                             type="text"
                             name="company"
-                            class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:border-brand-orange focus:ring-1 focus:ring-brand-orange outline-none transition-colors"
-                            placeholder="Your company"
+                            class="w-full px-4 py-3 bg-dark-card border border-dark-border rounded-md text-white focus:border-brand-orange focus:ring-1 focus:ring-brand-orange outline-none transition-all"
+                            placeholder="Your organization"
                         />
                     </div>
                     
                     <div>
-                        <label class="block text-sm font-medium text-brand-blue mb-2">Message</label>
+                        <label class="block text-sm font-semibold text-gray-300 mb-2">Project Details</label>
                         <textarea
                             name="message"
                             required
                             rows="6"
-                            class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:border-brand-orange focus:ring-1 focus:ring-brand-orange outline-none transition-colors resize-none"
-                            placeholder="Tell us about your project or thermal engineering needs..."
+                            class="w-full px-4 py-3 bg-dark-card border border-dark-border rounded-md text-white focus:border-brand-orange focus:ring-1 focus:ring-brand-orange outline-none transition-all resize-none"
+                            placeholder="Tell us about your thermal engineering requirements..."
                         ></textarea>
                     </div>
 
                     <button
                         type="submit"
-                        class="w-full bg-brand-orange text-white px-8 py-4 rounded-lg font-semibold hover:bg-opacity-90 hover:shadow-lg transition-all"
+                        class="w-full bg-brand-orange text-white px-8 py-4 rounded-md font-semibold text-lg hover:bg-orange-600 transition-all"
                     >
-                        Submit
+                        Submit Inquiry
                     </button>
                 </form>
 
-                <p class="text-sm text-gray-600 text-center mt-8">
-                    We provide discreet, high-level consulting for space companies worldwide. All inquiries are treated confidentially.
+                <p class="text-sm text-gray-500 text-center mt-8">
+                    All project inquiries are handled confidentially. We typically respond within 24 hours.
                 </p>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-brand-navy border-t border-brand-blue py-12 px-4 sm:px-6 lg:px-8">
+    <footer class="bg-dark-bg border-t border-dark-border py-12 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto text-center">
             <div class="flex items-center justify-center mb-4">
-                <img src="logo.png" alt="Nominalysis Logo" style="max-height: 60px; width: auto; filter: brightness(0) invert(1);">
+                <img src="logo.png" alt="Nominalysis Logo" style="max-height: 60px; width: auto;">
             </div>
-            <p class="text-gray-300 mb-2">
+            <p class="text-gray-400 mb-2 font-medium">
                 Satellite Thermal Engineering & Consulting
             </p>
-            <p class="text-gray-400 text-sm">
+            <p class="text-gray-600 text-sm">
                 © 2024 Nominalysis. All rights reserved.
             </p>
         </div>
